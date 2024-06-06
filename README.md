@@ -30,7 +30,7 @@
             ├──pojo
             ├──service //创建工作小组和更新工作内容通过resttemplate调用department接口实现
             ├──resources  //核心配置文件
-    使用的技术栈：springboot，mysql，satoken，socket，resttemplate模版
+    使用的技术栈：springboot，mysql，mybatis，satoken，socket，resttemplate模版
     心得：各方面还学的不够深入，但让我有了更深的理解
   
 
