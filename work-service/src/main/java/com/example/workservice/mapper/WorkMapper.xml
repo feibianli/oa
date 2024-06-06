@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.workservice.mapper.WorkMapper">
+    <update id="updateProgress" parameterType="com.example.workservice.pojo.Work">
+        update department.work set progress = #{progress} where id=#{id};
+    </update>
+    <select id="isFinish" resultType="com.example.workservice.pojo.Work">
+        select *
+        from department.work where id =#{id};
+    </select>
+    <select id="selectRole" resultType="String">
+        select role
+        from department.user where id = #{id};
+    </select>
+</mapper>

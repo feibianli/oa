@@ -1,0 +1,21 @@
+server:
+  port: 8083
+
+sa-token:
+
+  token-name: satoken
+  timeout: 2592000
+  activity-timeout: -1
+  is-concurrent: true
+  is-share: false
+  token-style: uuid
+  is-log: true
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/test
+    password: 123123
+    username: root
+  application:
+    name: work-service

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.departmentservice.mapper.DepartmentMapper">
+    <select id="selectMember" resultType="com.example.departmentservice.pojo.Department">
+        select member
+        from department.test;
+    </select>
+    <select id="selectNotice" resultType="com.example.departmentservice.pojo.Department">
+        select notice
+        from department.test;
+    </select>
+    <select id="selectJob" resultType="com.example.departmentservice.pojo.Department">
+        select jobDec
+        from department.test;
+    </select>
+    <update id="updateNotice" parameterType="com.example.departmentservice.pojo.Department">
+        update department.test set notice ="这是更新后的财务部" where notice ="这是财务部";
+    </update>
+    <insert id="joinDepartment" parameterType="com.example.departmentservice.pojo.Department">
+        insert into department.test (member,notice) values (#{name},#{department})
+    </insert>
+    <delete id="deletemember" parameterType="com.example.departmentservice.pojo.Department">
+        delete from department.test where member = #{name} and notice = #{department}
+    </delete>
+    <update id="updateGroup" parameterType="com.example.departmentservice.pojo.Department">
+        update department.test set group_id = #{group_id} where member =#{member};
+    </update>
+    <update id="updatejob" parameterType="com.example.departmentservice.pojo.Department">
+        update department.test set jobDec = #{jobDec} where group_id= #{id};
+    </update>
+    <select id="selectRole" resultType="String">
+        select role
+        from department.user where id = #{id};
+    </select>
+</mapper>
